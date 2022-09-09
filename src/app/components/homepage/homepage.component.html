@@ -1,0 +1,7 @@
+<table>
+    <tbody>
+        <tr *ngFor="let donut of donutsList">
+            <td><a href="" [routerLink]="['/donutDetail', donut.id]" >{{donut.name}} </a></td>
+        </tr>
+    </tbody>
+</table>

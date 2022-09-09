@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  donutsListEndpoint:'https://grandcircusco.github.io/demo-apis/donuts.json',
+  donutDetailsEndpoint:(id:number) => 'https://grandcircusco.github.io/demo-apis/donuts/{id}.json'
 };
 
 /*
