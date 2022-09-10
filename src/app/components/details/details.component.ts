@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Donut } from 'src/app/interfaces/donut';
 import { DonutService } from 'src/app/services/donut-service';
 
@@ -9,21 +10,25 @@ import { DonutService } from 'src/app/services/donut-service';
 })
 export class DetailsComponent implements OnInit {
 
-  details:Donut | undefined;
+  details:Donut | any;
+  id:number = 0;
+  extras:string[]=[];
   
-  constructor(private donutService:DonutService) { }
+  
+  constructor(private donutService:DonutService, private route:ActivatedRoute) { }
 
   ngOnInit(): void {
-      this.getDonutDetailsResponseApi();
-  }
+     this.route.paramMap.subscribe((params) => {
+      this.id = Number(params.get('id'));
+      this.getDonutDetailsResponseApi();  
+      });
+   }
 
   getDonutDetailsResponseApi(){
-      this.donutService.getDonutDetails().subscribe((data) => {
-      this.details=data,
-      console.log(data)
-    });
+     this.donutService.getDonutDetails(this.id).subscribe((data) => {
+      this.details = data
+      this.extras = data.extras;
+     });
   }
-
+ 
 }
-
-

@@ -1,0 +1,7 @@
+.tableDisplay{
+    table-layout: auto;
+    text-align: center;
+    border: mediumblue;
+    border-style: dotted;
+    width: 60%;
+}

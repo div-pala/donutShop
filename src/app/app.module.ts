@@ -7,13 +7,15 @@ import { HomepageComponent } from './components/homepage/homepage.component';
 import { DetailsComponent } from './components/details/details.component';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomepageComponent,
     DetailsComponent,
-    ShoppingCartComponent
+    ShoppingCartComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

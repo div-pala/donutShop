@@ -1,5 +1,16 @@
+<h2>Donut &nbsp; &nbsp; <button [routerLink] = "['/shoppingCart', details.id]" > Add to Cart {{details.id}}</button></h2> 
+<p>Name: {{details.name}}</p>
 
-<div *ngIf="details!=undefined">
-   ID : {{details.name}} 
-</div>
+<p>Calories: {{details.calories}} cals</p>
+
+<p *ngIf="extras.length>=1">Extras:</p>
+
+<ul>
+    <li *ngFor="let extra of details.extras">{{extra}}</li>
+</ul>
+
+<img *ngIf="details.photo" [src]="details.photo" height="200px" width="200px">
+
+<p>Photo attribution: <a href="{{details.photo_attribution}}" target="_blank">{{details.photo_attribution}}</a></p>
+
 

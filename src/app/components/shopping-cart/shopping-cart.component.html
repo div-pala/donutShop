@@ -1,1 +1,23 @@
-<p>shopping-cart works!</p>
+<a href="" (onclick)="navigateToHome()">Back to HomePage</a>
+
+<h2>Shopping Cart</h2> 
+<table class="tableDisplay">
+    <thead>
+        <tr>
+            <th scope="col">Donut</th>
+            <th scope="col">Calories</th>
+            <th scope="col">Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let donut of cartItems">
+            <td>{{donut.name}}</td>
+            <td>{{donut.calories}}</td>
+            <td> $ 1.00  </td>
+            <td><button (onclick)="removeDonut(donut.id)">Remove</button></td>
+       </tr>
+    </tbody>
+</table>
+<p> Total Calories :{{totalCalories}} </p>
+<p> Total Price : $ {{totalPrice}}   </p>
+
